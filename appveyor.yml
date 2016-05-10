@@ -3,7 +3,7 @@ build: false
 install:
   - cinst pester
   - ps: mkdir c:\deploy
-  - ps: mkdir c:\deploy3
+  - ps: mkdir c:\deploy2
 
 test_script:
   - ps: if (-not (Test-Path c:\deploy)) {exit 1}
