@@ -3,9 +3,10 @@ install:
 
 build: false
 
-deploy_script:
+install:
   - ps: mkdir c:\deploy
   - ps: Write-Output 'Deploy completed'
   
 test_script:
-  - ps: Test-Path c:\deploy
+  - ps: if (-not (Test-Path c:\deploy)) { Write-Error "Test path not found" }
+  - ps: if (-not (Test-Path c:\deploy2)) { Write-Error "Test path not found" }
