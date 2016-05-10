@@ -2,3 +2,10 @@ install:
   - cinst pester
 
 build: false
+
+deploy_script:
+  - ps: mkdir c:\deploy
+  - ps: Write-Output 'Deploy completed'
+  
+test_script:
+  - ps: Test-Path c:\deploy
