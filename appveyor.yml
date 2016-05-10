@@ -1,12 +1,10 @@
-install:
-  - cinst pester
-
 build: false
 
 install:
+  - cinst pester
   - ps: mkdir c:\deploy
-  - ps: Write-Output 'Deploy completed'
-  
+  - ps: mkdir c:\deploy3
+
 test_script:
-  - ps: if (-not (Test-Path c:\deploy)) { Write-Error "Test path not found" }
-  - ps: if (-not (Test-Path c:\deploy2)) { Write-Error "Test path not found" }
+  - ps: if (-not (Test-Path c:\deploy)) {exit 1}
+  - ps: if (-not (Test-Path c:\deploy2)) {exit 1}
